@@ -73,3 +73,27 @@
   background-color: #8b5cf6;
   color: #ffffff;
 }
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appointments-img {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .appointments-img {
+    display: block;
+    max-width: 50%;
+    max-height: 300px;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .appointment-heading {
+    font-size: 18px;
+  }
+}

@@ -28,7 +28,7 @@ const AppointmentItem = props => {
           type="button"
           className="fav-button"
           onClick={onStarredAppointment}
-          textid="star"
+          testid="star"
         >
           {addStarredImage}
         </button>

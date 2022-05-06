@@ -38,6 +38,8 @@ class Appointments extends Component {
 
     this.setState(prevList => ({
       appointmentsList: [...prevList.appointmentsList, newAppointment],
+      titleInput: '',
+      dateInput: '',
     }))
   }
 
@@ -55,7 +57,7 @@ class Appointments extends Component {
   }
 
   render() {
-    const {appointmentsList, isFilterActive} = this.state
+    const {titleInput, dateInput, appointmentsList, isFilterActive} = this.state
     let filteredList = appointmentsList
 
     if (isFilterActive) {
@@ -69,35 +71,44 @@ class Appointments extends Component {
     return (
       <div className="bg-container">
         <div className="bg-card">
-          <form onSubmit={this.updateAppointmentList}>
-            <h1>Add Appointment</h1>
-            <div className="input-container">
-              <label htmlFor="title" className="label">
-                TITLE
-              </label>
-              <input
-                type="text"
-                placeholder="Title"
-                id="title"
-                className="input"
-                onChange={this.getTitleInput}
-              />
-            </div>
-            <div className="input-container">
-              <label htmlFor="date" className="label">
-                DATE
-              </label>
-              <input
-                type="date"
-                id="date"
-                className="input"
-                onChange={this.getDateInput}
-              />
-            </div>
-            <button type="submit" className="add-button">
-              Add
-            </button>
-          </form>
+          <div className="header-container">
+            <form onSubmit={this.updateAppointmentList}>
+              <h1>Add Appointment</h1>
+              <div className="input-container">
+                <label htmlFor="title" className="label">
+                  TITLE
+                </label>
+                <input
+                  type="text"
+                  placeholder="Title"
+                  id="title"
+                  value={titleInput}
+                  className="input"
+                  onChange={this.getTitleInput}
+                />
+              </div>
+              <div className="input-container">
+                <label htmlFor="date" className="label">
+                  DATE
+                </label>
+                <input
+                  type="date"
+                  id="date"
+                  value={dateInput}
+                  className="input"
+                  onChange={this.getDateInput}
+                />
+              </div>
+              <button type="submit" className="add-button">
+                Add
+              </button>
+            </form>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
+              alt="appointments"
+              className="appointments-img"
+            />
+          </div>
           <hr />
           <div className="appointment-heading-container">
             <h1 className="appointment-heading">Appointments</h1>
