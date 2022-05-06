@@ -1,0 +1,31 @@
+.appointment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appointment-card {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #b5b7c4;
+  padding: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0px;
+}
+
+.date {
+  color: #b5b7c4;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.fav-button {
+  background-color: transparent;
+  border-style: none;
+}
